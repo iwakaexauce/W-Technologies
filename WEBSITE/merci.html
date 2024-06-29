@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>W-Technologies - Merci</title>
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <style>
+        /* Styles généraux */
+        .gradient-bg {
+            background: linear-gradient(to right, #059669, #2c7a7b, #3b82ac);
+        }
+
+        /* Barre de navigation */
+        .nav-bg {
+            background: linear-gradient(to right, #059669, #2c7a7b, #3b82ac);
+        }
+
+        .menu-toggle {
+            cursor: pointer;
+        }
+
+        .menu-item {
+            transition: background 0.3s;
+        }
+
+        .menu-item:hover {
+            background-color: rgba(46, 204, 113, 0.8);
+        }
+    </style>
+</head>
+
+<body class="bg-white text-gray-900">
+    <header class="nav-bg py-4 relative z-50">
+        <div class="container mx-auto flex justify-between items-center">
+            <a href="#" class="text-2xl font-bold text-white">W-Technologies</a>
+            <div class="relative">
+                <button id="menu-toggle" class="focus:outline-none text-white menu-toggle">
+                    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewbox="0 0 24 24"
+                        xmlns="http://www.w3.org/2000/svg">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                            d="M4 6h16M4 12h16M4 18h16"></path>
+                    </svg>
+                </button>
+                <div id="menu"
+                    class="absolute right-0 mt-2 w-48 bg-white rounded-lg shadow-lg py-2 hidden z-50">
+                    <a href="index.html"
+                        class="block px-4 py-2 text-gray-700 hover:bg-gray-100 menu-item">Accueil</a>
+                    <a href="Apropos.html"
+                        class="block px-4 py-2 text-gray-700 hover:bg-gray-100 menu-item">À propos</a>
+                    <a href="Contact.html"
+                        class="block px-4 py-2 text-gray-700 hover:bg-gray-100 menu-item">Contact</a>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <section class="py-12 bg-gray-100">
+        <div class="container mx-auto text-center">
+            <h2 class="text-3xl font-bold text-gray-900 mb-6">Merci de nous avoir contactés !</h2>
+            <p class="text-lg text-gray-700 mb-6">Nous avons bien reçu votre message et nous vous répondrons dans les plus brefs délais.</p>
+            <a href="index.html" class="bg-gradient-to-r from-blue-500 to-emerald-500 text-white px-6 py-2 rounded-lg button">Retour à l'accueil</a>
+        </div>
+    </section>
+
+    <footer class="footer-bg py-6 text-white">
+        <div class="container mx-auto text-center">
+            <p>&copy; 2024 W-Technologies. Tous droits réservés.</p>
+        </div>
+    </footer>
+    <script>
+        const menuToggle = document.getElementById('menu-toggle');
+        const menu = document.getElementById('menu');
+
+        menuToggle.addEventListener('click', () => {
+            menu.classList.toggle('hidden');
+        });
+    </script>
+
+</body>
+
+</html>

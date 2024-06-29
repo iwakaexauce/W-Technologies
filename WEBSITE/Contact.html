@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>W-Technologies - Contact</title>
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <style>
+        /* Styles généraux */
+        .gradient-bg {
+            background: linear-gradient(to right, #059669, #2c7a7b, #3b82ac);
+        }
+
+        .button {
+            transition: background 0.3s;
+        }
+
+        .button:hover {
+            background: linear-gradient(135deg, #2B6CB0, #00A3FF);
+        }
+
+        /* Barre de navigation */
+        .nav-bg {
+            background: linear-gradient(to right, #059669, #2c7a7b, #3b82ac);
+        }
+
+        .menu-toggle {
+            cursor: pointer;
+        }
+
+        .menu-item {
+            transition: background 0.3s;
+        }
+
+        .menu-item:hover {
+            background-color: rgba(46, 204, 113, 0.8);
+        }
+
+        /* Formulaire de contact */
+        .contact-form {
+            max-width: 600px;
+            margin: auto;
+            padding: 2rem;
+            background: white;
+            border-radius: 0.5rem;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+
+        .contact-form:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+        }
+
+        .form-group {
+            margin-bottom: 1rem;
+        }
+
+        .form-group label {
+            display: block;
+            margin-bottom: 0.5rem;
+            color: #333;
+        }
+
+        .form-group input,
+        .form-group textarea {
+            width: 100%;
+            padding: 0.75rem;
+            border: 1px solid #ddd;
+            border-radius: 0.25rem;
+            transition: border-color 0.3s;
+        }
+
+        .form-group input:focus,
+        .form-group textarea:focus {
+            border-color: #3b82ac;
+            outline: none;
+        }
+    </style>
+</head>
+
+<body class="bg-white text-gray-900">
+    <header class="nav-bg py-4 relative z-50">
+        <div class="container mx-auto flex justify-between items-center">
+            <a href="#" class="text-2xl font-bold text-white">W-Technologies</a>
+            <div class="relative">
+                <button id="menu-toggle" class="focus:outline-none text-white menu-toggle">
+                    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewbox="0 0 24 24"
+                        xmlns="http://www.w3.org/2000/svg">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                            d="M4 6h16M4 12h16M4 18h16"></path>
+                    </svg>
+                </button>
+                <div id="menu"
+                    class="absolute right-0 mt-2 w-48 bg-white rounded-lg shadow-lg py-2 hidden z-50">
+                    <a href="index.html"
+                        class="block px-4 py-2 text-gray-700 hover:bg-gray-100 menu-item">Accueil</a>
+                    <a href="Apropos.html"
+                        class="block px-4 py-2 text-gray-700 hover:bg-gray-100 menu-item">À propos</a>
+                    <a href="Contact.html"
+                        class="block px-4 py-2 text-gray-700 hover:bg-gray-100 menu-item">Contact</a>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <section class="py-12 bg-gray-100">
+        <div class="container mx-auto text-center">
+            <h2 class="text-3xl font-bold text-gray-900 mb-6">Contactez-nous</h2>
+            <p class="text-lg text-gray-700 mb-6">Nous serions ravis de discuter de vos projets. Remplissez le formulaire ci-dessous et nous vous répondrons dans les plus brefs délais.</p>
+            <form class="contact-form" id="contactForm" action="contact.php" method="POST">
+                <div class="form-group">
+                    <label for="name">Nom complet</label>
+                    <input type="text" id="name" name="name" class="w-full px-4 py-2 border" required>
+                </div>
+                <div class="form-group">
+                    <label for="email">Email</label>
+                    <input type="email" id="email" name="email" class="w-full px-4 py-2 border" required>
+                </div>
+                <div class="form-group">
+                    <label for="telephone">Téléphone</label>
+                    <input type="text" id="telephone" name="telephone" class="w-full px-4 py-2 border" required>
+                </div>
+                <div class="form-group">
+                    <label for="date">Date</label>
+                    <input type="date" id="date" name="date" class="w-full px-4 py-2 border" required>
+                </div>
+                <div class="form-group">
+                    <label for="message">Message</label>
+                    <textarea id="message" name="message" rows="5" class="w-full px-4 py-2 border" required></textarea>
+                </div>
+                <button type="submit" class="w-full bg-gradient-to-r from-blue-500 to-emerald-500 text-white px-6 py-2 rounded-lg button">Envoyer</button>
+            </form>
+        </div>
+    </section>
+
+    <footer class="footer-bg py-6 text-white">
+        <div class="container mx-auto text-center">
+            <p>&copy; 2024 W-Technologies. Tous droits réservés.</p>
+        </div>
+    </footer>
+    <script>
+        const menuToggle = document.getElementById('menu-toggle');
+        const menu = document.getElementById('menu');
+
+        menuToggle.addEventListener('click', () => {
+            menu.classList.toggle('hidden');
+        });
+    </script>
+
+</body>
+
+</html>

@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>W-Technologies - À propos</title>
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <style>
+        /* Styles généraux */
+        .gradient-bg {
+            background: linear-gradient(to right, #059669, #2c7a7b, #3b82ac);
+        }
+
+        .button {
+            transition: background 0.3s;
+        }
+
+        .button:hover {
+            background: linear-gradient(135deg, #2B6CB0, #00A3FF);
+        }
+
+        /* Barre de navigation */
+        .nav-bg {
+            background: linear-gradient(to right, #059669, #2c7a7b, #3b82ac);
+        }
+
+        .menu-toggle {
+            cursor: pointer;
+        }
+
+        .menu-item {
+            transition: background 0.3s;
+        }
+
+        .menu-item:hover {
+            background-color: rgba(46, 204, 113, 0.8);
+        }
+    </style>
+</head>
+
+<body class="bg-white text-gray-900">
+    <header class="nav-bg py-4 relative z-50">
+        <div class="container mx-auto flex justify-between items-center">
+            <a href="#" class="text-2xl font-bold text-white">W-Technologies</a>
+            <div class="relative">
+                <button id="menu-toggle" class="focus:outline-none text-white menu-toggle">
+                    <svg class="w-6 h-6" fill="none" stroke="currentColor" attr-lowercase="0 0 24 24"
+                        xmlns="http://www.w3.org/2000/svg">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                            d="M4 6h16M4 12h16M4 18h16"></path>
+                    </svg>
+                </button>
+                <div id="menu"
+                    class="absolute right-0 mt-2 w-48 bg-white rounded-lg shadow-lg py-2 hidden z-50">
+                    <a href="index.html"
+                        class="block px-4 py-2 text-gray-700 hover:bg-gray-100 menu-item">Accueil</a>
+                    <a href="Apropos.html"
+                        class="block px-4 py-2 text-gray-700 hover:bg-gray-100 menu-item">À propos</a>
+                    <a href="Contact.html"
+                        class="block px-4 py-2 text-gray-700 hover:bg-gray-100 menu-item">Contact</a>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <section class="py-12 bg-gray-100">
+        <div class="container mx-auto text-center">
+            <h2 class="text-3xl font-bold text-gray-900 mb-6">À propos de nous</h2>
+            <p class="text-lg text-gray-700 mb-6">W-Technologies est spécialisé dans la création de contenus digitaux innovants et de sites web modernes. Notre mission est de transformer vos idées en réalité digitale.</p>
+            <img src="IMAGESITE1.jpg" alt="Notre équipe" class="w-full max-w-4xl mx-auto rounded-lg shadow-lg mb-6">
+            <div class="text-left">
+                <h3 class="text-2xl font-bold mb-4">Notre Histoire</h3>
+                <p class="text-gray-700 mb-4">Depuis notre création, nous avons aidé de nombreuses entreprises à développer leur présence en ligne. Nous croyons en l'importance de l'innovation et de la qualité pour offrir les meilleures solutions à nos clients.</p>
+                <h3 class="text-2xl font-bold mb-4">Nos Valeurs</h3>
+                <p class="text-gray-700 mb-4">Nous mettons un point d'honneur à fournir des services de qualité, basés sur la transparence, la confiance et l'engagement. Nos valeurs fondamentales sont l'innovation, la qualité et la satisfaction client.</p>
+                <h3 class="text-2xl font-bold mb-4">Notre Équipe</h3>
+                <p class="text-gray-700 mb-4">Notre équipe est composée de professionnels passionnés par le digital et l'innovation. Nous travaillons ensemble pour atteindre un objectif commun : la réussite de vos projets.</p>
+            </div>
+        </div>
+        <script>
+            const menuToggle = document.getElementById('menu-toggle');
+            const menu = document.getElementById('menu');
+    
+            menuToggle.addEventListener('click', () => {
+                menu.classList.toggle('hidden');
+            });
+        </script>
+    </section>
+
+    <footer class="footer-bg py-6 text-white">
+        <div class="container mx-auto text-center">
+            <p>&copy; 2024 W-Technologies. Tous droits réservés.</p>
+        </div>
+    </footer>
+
+</body>
+
+</html>

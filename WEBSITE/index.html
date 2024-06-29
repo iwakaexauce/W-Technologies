@@ -1,0 +1,302 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>W-Technologies - Accueil</title>
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <style>
+        /* Styles généraux */
+        .gradient-bg {
+            background: linear-gradient(to right, #059669, #2c7a7b, #3b82ac);
+        }
+
+        .button {
+            transition: background 0.3s;
+        }
+
+        .button:hover {
+            background: linear-gradient(135deg, #2B6CB0, #00A3FF);
+        }
+
+        /* Barre de navigation */
+        .nav-bg {
+            background: linear-gradient(to right, #059669, #2c7a7b, #3b82ac);
+        }
+
+        .menu-toggle {
+            cursor: pointer;
+        }
+
+        .menu-item {
+            transition: background 0.3s;
+        }
+
+        .menu-item:hover {
+            background-color: rgba(46, 204, 113, 0.8);
+        }
+
+        /* Services */
+        .service-card {
+            display: flex;
+            align-items: center;
+            gap: 20px;
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+
+        .service-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        .service-card .content {
+            flex: 1;
+        }
+
+        .service-card .button {
+            background: linear-gradient(135deg, #2B6CB0, #00A3FF);
+            color: white;
+        }
+
+        .service-card .button:hover {
+            background: linear-gradient(135deg, #2B6CB0, #00A3FF);
+        }
+        /* video styles */
+
+        .video-container {
+            max-width: 800px;
+            margin: auto;
+            padding: 2rem;
+        }
+
+        .video-container video {
+            width: 100%;
+            height: auto;
+            border-radius: 0.5rem;
+        }
+
+
+        /* Effets d'éclairs */
+        .flash {
+    position: absolute;
+    top: 50%;
+    width: 100px;
+    height: 5px;
+    background: yellow;
+    box-shadow: 0 0 20px yellow, 0 0 40px yellow, 0 0 60px yellow;
+    border-radius: 50%;
+    opacity: 0;
+    animation: flash 2s linear infinite;
+}
+
+
+        .flash {
+            position: absolute;
+            background: linear-gradient(to right, rgba(255, 255, 255, 0), rgba(255, 255, 255, 1));
+            width: 100%;
+            height: 2px;
+            animation: flash 3s infinite linear;
+        }
+
+        @keyframes flash {
+            0% {
+                left: -100%;
+                opacity: 0;
+            }
+
+            10% {
+                opacity: 1;
+            }
+            90% {
+                opacity: 1;
+            }
+            100% {
+                left: 100%;
+                opacity: 0;
+            }
+        }
+
+        /* Pied de page */
+        .footer-bg {
+            background: linear-gradient(to right, #059669, #2c7a7b, #3b82ac);
+        }
+
+          /* Styles pour la vidéo */
+          .video-container {
+            max-width: 1000px;
+            margin: auto;
+            padding: 2rem;
+        }
+
+        .video-container video {
+            width: 100%;
+            height: 10cm;
+            object-fit: cover;
+            border-radius: 0.5rem;
+        }
+
+    </style>
+</head>
+
+<body class="bg-white text-gray-900">
+    <header class="nav-bg py-4 relative z-50">
+        <div class="container mx-auto flex justify-between items-center">
+            <a href="#" class="text-2xl font-bold text-white">W-Technologies</a>
+            <div class="relative">
+                <button id="menu-toggle" class="focus:outline-none text-white menu-toggle">
+                    <svg class="w-6 h-6" fill="none" stroke="currentColor" attr-lowercase="0 0 24 24"
+                        xmlns="http://www.w3.org/2000/svg">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                            d="M4 6h16M4 12h16M4 18h16"></path>
+                    </svg>
+                </button>
+                <div id="menu"
+                    class="absolute right-0 mt-2 w-48 bg-white rounded-lg shadow-lg py-2 hidden z-50">
+                    <a href="index.html"
+                        class="block px-4 py-2 text-gray-700 hover:bg-gray-100 menu-item">Accueil</a>
+                    <a href="Apropos.html"
+                        class="block px-4 py-2 text-gray-700 hover:bg-gray-100 menu-item">À propos</a>
+                    <a href="Contact.html"
+                        class="block px-4 py-2 text-gray-700 hover:bg-gray-100 menu-item">Contact</a>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <section class="hero relative">
+        <div class="hero-images">
+            <img src="IMAGESITE2.jpeg" alt="IMAGESITE2"
+                class="absolute inset-0 w-full h-full object-cover opacity-75">
+            <img src="IMAGESITE1.jpg" alt="IMAGESITE1"
+                class="absolute inset-0 w-full h-full object-cover hidden opacity-75">
+        </div>
+        <div class="container mx-auto text-center text-white relative z-10 py-20">
+            <h1 class="text-5xl font-bold">Bienvenue chez W-Technologies</h1>
+            <p class="text-lg mt-4">Transformez vos idées en réalité digitale</p>
+            <a href="Contact.html"
+                class="mt-8 inline-block bg-yellow-500 text-white px-6 py-3 rounded-lg button">Nous
+                contacter</a>
+        </div>
+        <div class="overlay absolute inset-0 bg-black opacity-50"></div>
+        <div class="flash"></div>
+        <div class="flash"></div>
+    </section>
+
+    <section class="py-12 bg-gray-100">
+        <div class="container mx-auto text-center">
+            <h2 class="text-3xl font-bold text-gray-900 mb-6">À propos de nous</h2>
+            <p class="text-lg text-gray-700">W-Technologies est spécialisé dans la création de contenus digitaux
+                innovants et de sites web modernes. Notre mission est de transformer vos idées en réalité
+                digitale.</p>
+        </div>
+         <!-- Section vidéo -->
+    <section class="video-container my-8">
+        <video autoplay muted loop>
+            <source src="SITEVIDEO.mp4" type="video/mp4">
+            Votre navigateur ne supporte pas la balise vidéo.
+        </video>
+   
+
+
+   
+    </section>
+
+    </section>
+
+    <section class="py-12">
+        <div class="container mx-auto">
+            <h2 class="text-3xl font-bold text-gray-900 mb-6 text-center">Nos Services</h2>
+            <div class="space-y-8">
+                <div class="service-card">
+                    <div class="content">
+                        <h3 class="text-2xl font-bold mb-4">Création de Contenus</h3>
+                        <p class="text-gray-700 mb-4">Nous créons des contenus digitaux captivants et sur mesure pour
+                            répondre aux besoins de votre entreprise.</p>
+                        <a href="Contact.html" class="inline-block bg-gradient-to-r from-blue-500 to-emerald-500 text-white px-6 py-2 rounded-lg button">En savoir plus</a>
+                    </div>
+                    <img src="contenue.jpeg" alt="Création de Contenu" class="object-cover rounded-lg h-64">
+                </div>
+                <div class="service-card">
+                    <div class="content">
+                        <h3 class="text-2xl font-bold mb-4">Développement Web</h3>
+                        <p class="text-gray-700 mb-4">Nous développons des sites web modernes et réactifs pour
+                            améliorer votre présence en ligne.</p>
+                        <a href="Contact.html" class="inline-block bg-gradient-to-r from-blue-500 to-emerald-500 text-white px-6 py-2 rounded-lg button">En savoir plus</a>
+                    </div>
+                    <img src="PROGRAMMATION.jpeg" alt="Développement Web" class="object-cover rounded-lg h-64">
+                </div>
+                <div class="service-card">
+                    <div class="content">
+                        <h3 class="text-2xl font-bold mb-4">SEO & Marketing</h3>
+                        <p class="text-gray-700 mb-4">Nous optimisons votre site pour les moteurs de recherche et
+                            mettons en place des stratégies de marketing digital efficaces.</p>
+                        <a href="Contact.html" class="inline-block bg-gradient-to-r from-blue-500 to-emerald-500 text-white px-6 py-2 rounded-lg button">En savoir plus</a>
+                    </div>
+                    <img src="MARKETING.jpeg" alt="SEO & Marketing" class="object-cover rounded-lg h-64">
+                </div>
+            </div>
+        </div>
+    </section>
+      
+          <section class="py-12 gradient-bg">
+            <div class="container mx-auto text-center text-white">
+                <h2 class="text-3xl font-bold mb-6">Portfolio</h2>
+                <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-8">
+                    <div class="p-4 bg-white rounded-lg shadow-lg">
+                        <img src="exauce.jpg"
+                            alt="Project 1" class="mb-4 rounded-lg w-full h-auto object-cover" style="max-height: 200px;">
+                        <h3 class="text-xl font-bold mb-2">IWAKA EXAUCE</h3>
+                        <p class="text-gray-700 italic">Web Frontend & No code.</p>
+                    </div>
+                    <div class="p-4 bg-white rounded-lg shadow-lg">
+                        <img src="caleb.jpg"
+                            alt="Project 2" class="mb-4 rounded-lg w-full h-auto object-cover" style="max-height: 200px;">
+                        <h3 class="text-xl font-bold mb-2">MULUMBA CALEB</h3>
+                        <p class="text-gray-700 italic">Logiciel informatique.</p>
+                    </div>
+                    <div class="p-4 bg-white rounded-lg shadow-lg">
+                        <img src="junior.jpg"
+                            alt="Project 3" class="mb-4 rounded-lg w-full h-auto object-cover" style="max-height: 200px;">
+                        <h3 class="text-xl font-bold mb-2">ENZO JUNIOR</h3>
+                        <p class="text-gray-700 italic">Logiciel informatique & design</p>
+                    </div>
+                    <div class="p-4 bg-white rounded-lg shadow-lg">
+                        <img src="chris.jpg"
+                            alt="Project 4" class="mb-4 rounded-lg w-full h-auto object-cover" style="max-height: 200px;">
+                        <h3 class="text-xl font-bold mb-2">Projet 4</h3>
+                        <p class="text-gray-700 italic">Bueautique & Marketing.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+      
+          <section class="py-12">
+              <div class="container mx-auto text-center">
+                  <h2 class="text-3xl font-bold text-gray-900 mb-6">Contactez-nous</h2>
+                  <form class="max-w-lg mx-auto">
+                      <div class="grid grid-cols-1 sm:grid-cols-2 gap-6">
+                          <input type="text" placeholder="Nom" class="w-full px-4 py-2 rounded-lg bg-gray-100 focus:outline-none focus:bg-white">
+                          <input type="email" placeholder="Email" class="w-full px-4 py-2 rounded-lg bg-gray-100 focus:outline-none focus:bg-white">
+                          <textarea placeholder="Message" rows="5" class="w-full px-4 py-2 rounded-lg bg-gray-100 focus:outline-none focus:bg-white"></textarea>
+                      </div>
+                      <button type="submit" class="mt-4 bg-gradient-to-r from-blue-500 to-emerald-500 text-white px-6 py-3 rounded-lg button">Envoyer</button>
+                  </form>
+              </div>
+          </section>
+      
+          <footer class="footer-bg py-8 text-center text-white">
+              <p>&copy; 2024 W-Technologies. Tous droits réservés.</p>
+          </footer>
+      
+          <script>
+              const menuToggle = document.getElementById('menu-toggle');
+              const menu = document.getElementById('menu');
+      
+              menuToggle.addEventListener('click', () => {
+                  menu.classList.toggle('hidden');
+              });
+          </script>
+      </body>
+      
+      </html>
